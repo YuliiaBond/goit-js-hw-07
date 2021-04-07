@@ -6,7 +6,7 @@
 // Получится 'В списке 3 категории.'.
 
 const categoriesItemEl = document.querySelectorAll('li.item');
-console.log(categoriesItemEl);
+// console.log(categoriesItemEl);
 console.log(`В списке ${categoriesItemEl.length} категории.`);
 
 // Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка 
@@ -22,4 +22,4 @@ console.log(
     `Категория: ${categoriesTitleEl.textContent}
 Количество элементов: ${categoriesLiEl.length}`
 );
-console.log(categoriesTitleEl.childNodes);
+// console.log(categoriesTitleEl.childNodes.length);
