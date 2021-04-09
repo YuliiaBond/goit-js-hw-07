@@ -27,17 +27,31 @@ const images = [
   },
 ];
 
-const imagesEl = document.querySelector('#gallery');
+const galleryEl = document.querySelector('#gallery');
+// console.log(galleryEl);
 
-const elements = images.map(option => {
-  const imgEl = document.createElement('img');
-  imgEl.src = option.url;
-  imgEl.alt = option.alt;
-  imgEl.width = 320;
+// // ------1-й способ------
+// const makeGallery = ({ url, alt }) => {
+//   const itemEl = document.createElement('li');
 
-  return imgEl;
-});
+//   const imagesEl = document.createElement('img');
+//   imagesEl.src = url;
+//   imagesEl.alt = alt;
+//   imagesEl.width = 320;
+  
+//   itemEl.append(imagesEl);
 
-console.log(elements);
+//     return itemEl;
+// };
+// const elements = images.map(makeGallery);
+// console.log(elements);
+// galleryEl.append(...elements);
 
-imagesEl.append(...elements);
+// ------2-й способ------
+const makeGallery = ({ url, alt }) => {
+  return `<li class='item'><img alt="${alt}" src="${url}" class='photo'></img></li>`;
+};
+
+const elements = images.map(makeGallery).join('');
+
+galleryEl.insertAdjacentHTML('afterbegin', elements);

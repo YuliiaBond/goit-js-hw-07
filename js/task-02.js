@@ -26,7 +26,6 @@ const makeIngredients = options => {
   });
 };
 
-
 const elements = makeIngredients(ingredients);
 ingredientsEl.append(...elements);
-console.log(elements);
+// console.log(elements);

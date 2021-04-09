@@ -5,7 +5,7 @@
 // Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item. 
 // Получится 'В списке 3 категории.'.
 
-const categoriesItemEl = document.querySelectorAll('li.item');
+const categoriesItemEl = document.querySelectorAll('.item');
 // console.log(categoriesItemEl);
 console.log(`В списке ${categoriesItemEl.length} категории.`);
 
@@ -16,10 +16,9 @@ console.log(`В списке ${categoriesItemEl.length} категории.`);
 // -Категория: Животные
 // -Количество элементов: 4
 
-const categoriesTitleEl = document.querySelector('li.item h2');
-const categoriesLiEl = document.querySelectorAll('.item li');
-console.log(
-    `Категория: ${categoriesTitleEl.textContent}
-Количество элементов: ${categoriesLiEl.length}`
-);
-// console.log(categoriesTitleEl.childNodes.length);
+categoriesItemEl.forEach(el => {
+    // console.log(el);
+    console.log(`Категория: ${el.childNodes[1].textContent}`);
+    console.log(`Количество элементов: ${el.childNodes[3].children.length}`);
+});
+
